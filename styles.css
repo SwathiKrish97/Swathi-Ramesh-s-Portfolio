@@ -1,43 +1,95 @@
-body {
-  font-family: Arial, sans-serif;
-}
-
-.sidebar ul {
-  list-style-type: none;
+/* Reset some basic elements */
+body, h1, h2, h3, p, ul, li, nav, section, footer {
+  margin: 0;
   padding: 0;
-}
-
-.sidebar li a {
+  list-style: none;
   text-decoration: none;
-  color: #000;
-  display: block;
-  padding: 10px;
-  background-color: #f0f0f0;
-  margin-bottom: 5px;
 }
 
-section {
-  padding: 20px;
-  margin-left: 150px; /* Adjust based on sidebar width */
-}
-
-h1, h2, h3 {
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
   color: #333;
 }
 
-ul {
-  list-style-type: none;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-footer {
-  background-color: #f0f0f0;
-  text-align: center;
-  padding: 10px;
+/* Sidebar styling */
+.sidebar {
   position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: #333;
+  color: #fff;
+  padding-top: 30px; /* Spacing from the top */
+}
+
+.sidebar ul {
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  padding: 15px;
+  text-transform: uppercase;
+  display: block;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background: #444;
+  box-shadow: inset 0 0 5px rgba(255,255,255,0.2);
+}
+
+/* Main content styling */
+section {
+  margin-left: 250px; /* same as sidebar width */
+  padding: 20px;
+  background: #fff;
+  min-height: 100vh; /* full height */
+}
+
+section h1, section h2 {
+  margin-bottom: 20px;
+}
+
+/* Footer styling */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: absolute;
   bottom: 0;
   width: 100%;
 }
+
+/* Responsive image in the sidebar or header */
+.header-image {
+  display: block;
+  width: 200px;
+  margin: 0 auto 30px;
+  border-radius: 50%;
+}
+
+/* Style adjustments for contact and certifications */
+#contact-section, #certifications-section {
+  background: #e2e2e2;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Adjust link colors for better visibility */
+a {
+  color: #00f;
+}
+
+a:hover {
+  color: #009;
+}
+
+/* Add your own color, typography, and layout styles as needed */
