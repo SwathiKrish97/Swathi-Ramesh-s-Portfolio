@@ -109,7 +109,7 @@ section h1, section h2 {
 
 #about-me-section p {
   line-height: 1.8;
-  text-align: justify;
+  text-align: center;
 }
 
 /* Projects section styling */
