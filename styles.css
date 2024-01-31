@@ -1,78 +1,222 @@
+/* Base reset and element styling */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, p, ul, li, nav, section, footer {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* Google Font inclusion */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;500;600;700&display=swap');
+
+/* Root variable definitions */
+:root {
+  --primary-color: #007bff; /* Primary color for links and highlights */
+  --text-color: #333; /* Main text color */
+  --background-color: #f8f9fa; /* Light grey background for a softer look */
+  --sidebar-bg-color: #343a40; /* Darker shade for sidebar */
+  --footer-bg-color: #007bff; /* Keeping primary color for footer for consistency */
+  --link-color: #007bff;
+  --hover-bg-color: #0056b3; /* Slightly darker shade for hover state */
+  --font-family-sans: 'Open Sans', sans-serif;
+  --font-family-heading: 'Raleway', sans-serif;
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-family-sans);
+  line-height: 1.6;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Sidebar styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: var(--sidebar-bg-color);
+  color: #fff;
+  padding-top: 30px;
+  overflow-y: auto;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  padding: 15px;
+  text-transform: uppercase;
+  display: block;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background: var(--hover-bg-color);
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
 /* Content styling */
 section {
+  margin-left: 250px;
+  padding: 40px;
+  background: #fff;
+  min-height: 100vh;
+}
+
+section h1, section h2 {
+  font-family: var(--font-family-heading);
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+/* Home section styling */
+#home-section {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
-  flex-direction: column;
-  min-height: calc(100vh - 60px); /* Adjusted to account for the header/footer height */
-  margin-left: 250px; /* Adjust if sidebar width changes */
-  padding: 20px;
-  background: #fff; /* Ensure white background */
 }
 
-/* Increase font sizes for headings and paragraphs */
-section h1, 
-section h2, 
-section .experience-item h3 {
-  font-size: 2rem; /* Larger font size for headings */
+#home-section h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
 }
 
-section p, 
-section ul li {
-  font-size: 1.25rem; /* Larger font size for text */
+#home-section p {
+  font-size: 1.2em;
+  max-width: 600px;
 }
 
-/* Ensure full height for body and html for flex */
-html, body {
-  height: 100%;
-  margin: 0; /* Remove any default margin */
-  padding: 0; /* Remove any default padding */
+/* About section styling */
+#about-me-section {
+  background: #e2e2e2;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
-/* Apply flex styling to the body to create a column layout */
-body {
-  display: flex;
-  flex-direction: column;
+#about-me-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
 }
 
-/* Make sidebar the same height as the viewport */
-.sidebar {
-  height: 100vh; /* Full height */
-  width: 250px; /* Sidebar width */
-  position: fixed;
-  left: 0;
-  top: 0;
-  background: #333; /* Sidebar color */
-  padding-top: 30px; /* Adjust as needed */
-  overflow-y: auto; /* Scrollable when content overflows */
+#about-me-section p {
+  line-height: 1.8;
+  text-align: center;
 }
 
-/* Adjust footer to be at the bottom */
+/* Projects section styling */
+#projects-section ul {
+  padding-left: 0;
+}
+
+#projects-section ul li {
+  background: #e9ecef;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-left: 5px solid var(--primary-color);
+}
+
+#projects-section ul li a {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+#projects-section ul li a:hover {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* Experience section styling */
+#experience-section .experience-item {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+#experience-section .experience-item:last-child {
+  border-bottom: 0;
+}
+
+#experience-section .experience-item h3 {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#experience-section .experience-item p {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+#experience-section .experience-item ul {
+  padding-left: 20px;
+}
+
+#experience-section .experience-item ul li {
+  margin-bottom: 5px;
+}
+
+/* Contact and certifications section styling */
+#contact-section, #certifications-section {
+  background: #e2e2e2;
+  padding: 40px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+#contact-section h2, #certifications-section h2 {
+  margin-bottom: 20px;
+}
+
+#certifications-section ul {
+  padding-left: 20px;
+}
+
+#certifications-section ul li {
+  margin-bottom: 5px;
+}
+
+/* Footer styling adjustments */
 footer {
-  position: relative; /* Change to relative to flow with content */
+  position: relative; /* Change from fixed to relative */
   width: 100%;
-  background: #333; /* Footer color */
-  color: white;
+  left: 0;
+  background: var(--footer-bg-color);
+  color: #fff;
   text-align: center;
   padding: 10px 0;
+  margin-top: 40px;
 }
 
 /* Responsive design adjustments */
 @media (max-width: 768px) {
   .sidebar {
-    position: static; /* Static so it flows in document order */
-    width: 100%; /* Full width */
-    height: auto; /* Height auto for smaller devices */
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .sidebar ul li a {
+    text-align: center;
+    padding: 10px;
   }
 
   section {
-    margin-left: 0; /* Reset left margin for mobile */
-    padding: 20px; /* Adjust padding for mobile */
-    min-height: auto; /* Height auto for smaller devices */
+    margin-left: 0;
+    padding: 20px;
   }
 
   footer {
-    position: relative; /* Footer position adjusted for mobile */
+    position: relative;
+    width: 100%;
+    left: 0;
   }
 }
