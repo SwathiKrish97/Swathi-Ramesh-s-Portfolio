@@ -17,13 +17,13 @@ body, h1, h2, h3, p, ul, li, nav, section, footer {
 
 /* Root variable definitions */
 :root {
-  --primary-color: #007bff; /* Primary color for links and highlights */
-  --text-color: #333; /* Main text color */
-  --background-color: #f8f9fa; /* Light grey background for a softer look */
-  --sidebar-bg-color: #343a40; /* Darker shade for sidebar */
-  --footer-bg-color: #007bff; /* Keeping primary color for footer for consistency */
+  --primary-color: #0056b3;
+  --text-color: #333;
+  --background-color: #ffffff; /* Set background color to white */
+  --sidebar-bg-color: #333;
+  --footer-bg-color: #0056b3;
   --link-color: #007bff;
-  --hover-bg-color: #0056b3; /* Slightly darker shade for hover state */
+  --hover-bg-color: #0056b3;
   --font-family-sans: 'Open Sans', sans-serif;
   --font-family-heading: 'Raleway', sans-serif;
 }
@@ -34,6 +34,9 @@ body {
   line-height: 1.6;
   background: var(--background-color);
   color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
 }
 
 /* Sidebar styling */
@@ -42,7 +45,7 @@ body {
   top: 0;
   left: 0;
   width: 250px;
-  height: 100%;
+  height: 100vh; /* Full viewport height */
   background: var(--sidebar-bg-color);
   color: #fff;
   padding-top: 30px;
@@ -64,158 +67,50 @@ body {
 
 /* Content styling */
 section {
-  margin-left: 250px;
+  flex: 1; /* Allows section to fill available space */
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  text-align: center;
   padding: 40px;
-  background: #fff;
-  min-height: 100vh;
+  background: var(--background-color);
 }
 
 section h1, section h2 {
   font-family: var(--font-family-heading);
-  margin-bottom: 20px;
   color: var(--primary-color);
+  font-size: 2.5rem; /* Larger font size for headings */
+  margin-bottom: 0.5em;
 }
 
-/* Home section styling */
-#home-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
+section p, section li {
+  font-size: 1.25rem; /* Larger font size for text */
 }
 
-#home-section h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-}
-
-#home-section p {
-  font-size: 1.2em;
-  max-width: 600px;
-}
-
-/* About section styling */
-#about-me-section {
-  background: #e2e2e2;
-  padding: 40px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-#about-me-section h2 {
-  margin-bottom: 20px;
-}
-
-#about-me-section p {
-  line-height: 1.8;
-  text-align: center;
-}
-
-/* Projects section styling */
-#projects-section ul {
-  padding-left: 0;
-}
-
-#projects-section ul li {
-  background: #e9ecef;
-  margin-bottom: 10px;
-  padding: 15px;
-  border-left: 5px solid var(--primary-color);
-}
-
-#projects-section ul li a {
-  color: var(--text-color);
-  transition: color 0.3s ease;
-}
-
-#projects-section ul li a:hover {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-/* Experience section styling */
-#experience-section .experience-item {
-  margin-bottom: 15px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #ddd;
-}
-
-#experience-section .experience-item:last-child {
-  border-bottom: 0;
-}
-
-#experience-section .experience-item h3 {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-#experience-section .experience-item p {
-  font-size: 0.9em;
-  margin-bottom: 10px;
-}
-
-#experience-section .experience-item ul {
-  padding-left: 20px;
-}
-
-#experience-section .experience-item ul li {
-  margin-bottom: 5px;
-}
-
-/* Contact and certifications section styling */
-#contact-section, #certifications-section {
-  background: #e2e2e2;
-  padding: 40px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-}
-
-#contact-section h2, #certifications-section h2 {
-  margin-bottom: 20px;
-}
-
-#certifications-section ul {
-  padding-left: 20px;
-}
-
-#certifications-section ul li {
-  margin-bottom: 5px;
-}
-
-/* Footer styling adjustments */
+/* Footer styling */
 footer {
-  position: relative; /* Change from fixed to relative */
-  width: 100%;
-  left: 0;
   background: var(--footer-bg-color);
   color: #fff;
   text-align: center;
   padding: 10px 0;
-  margin-top: 40px;
+  width: 100%;
 }
 
 /* Responsive design adjustments */
 @media (max-width: 768px) {
   .sidebar {
+    position: static; /* Allows the sidebar to flow in the normal document order */
     width: 100%;
     height: auto;
-    position: relative;
-  }
-
-  .sidebar ul li a {
-    text-align: center;
-    padding: 10px;
+    padding-top: 0;
   }
 
   section {
-    margin-left: 0;
-    padding: 20px;
+    margin-left: 0; /* Resets any left margin */
+    padding: 20px; /* Smaller padding on smaller screens */
   }
 
   footer {
-    position: relative;
-    width: 100%;
-    left: 0;
+    position: relative; /* Adjust footer position for mobile */
   }
 }
