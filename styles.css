@@ -1,4 +1,4 @@
-/* Reset some basic elements */
+
 body, h1, h2, h3, p, ul, li, nav, section, footer {
   margin: 0;
   padding: 0;
@@ -92,7 +92,6 @@ a:hover {
   color: #009;
 }
 
-/* Additional Styles */
 
 /* Project list item styles */
 #projects-section ul li {
@@ -114,7 +113,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Ensure the footer is at the bottom */
+
 html, body {
   height: 100%;
 }
