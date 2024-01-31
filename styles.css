@@ -92,4 +92,39 @@ a:hover {
   color: #009;
 }
 
-/* Add your own color, typography, and layout styles as needed */
+/* Additional Styles */
+
+/* Project list item styles */
+#projects ul li {
+  background: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-left: 3px solid #0d6efd; /* Bootstrap primary color for a little highlight */
+}
+
+/* Project link styles */
+#projects ul li a {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Project link hover styles */
+#projects ul li a:hover {
+  color: #0d6efd; /* Bootstrap primary color */
+  text-decoration: underline;
+}
+
+/* Ensure the footer is at the bottom */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto; /* Push footer to the bottom */
+}
+
