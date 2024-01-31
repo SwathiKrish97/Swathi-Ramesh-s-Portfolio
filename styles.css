@@ -1,116 +1,78 @@
-/* Base reset and element styling */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body, h1, h2, h3, p, ul, li, nav, section, footer {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-}
-
-/* Google Font inclusion */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;500;600;700&display=swap');
-
-/* Root variable definitions */
-:root {
-  --primary-color: #0056b3;
-  --text-color: #333;
-  --background-color: #ffffff; /* Set background color to white */
-  --sidebar-bg-color: #333;
-  --footer-bg-color: #0056b3;
-  --link-color: #007bff;
-  --hover-bg-color: #0056b3;
-  --font-family-sans: 'Open Sans', sans-serif;
-  --font-family-heading: 'Raleway', sans-serif;
-}
-
-/* Base styles */
-body {
-  font-family: var(--font-family-sans);
-  line-height: 1.6;
-  background: var(--background-color);
-  color: var(--text-color);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Full viewport height */
-}
-
-/* Sidebar styling */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 250px;
-  height: 100vh; /* Full viewport height */
-  background: var(--sidebar-bg-color);
-  color: #fff;
-  padding-top: 30px;
-  overflow-y: auto;
-}
-
-.sidebar ul li a {
-  color: #fff;
-  padding: 15px;
-  text-transform: uppercase;
-  display: block;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.sidebar ul li a:hover {
-  background: var(--hover-bg-color);
-  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
-}
-
 /* Content styling */
 section {
-  flex: 1; /* Allows section to fill available space */
   display: flex;
-  justify-content: center; /* Horizontal centering */
-  align-items: center; /* Vertical centering */
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 40px;
-  background: var(--background-color);
+  flex-direction: column;
+  min-height: calc(100vh - 60px); /* Adjusted to account for the header/footer height */
+  margin-left: 250px; /* Adjust if sidebar width changes */
+  padding: 20px;
+  background: #fff; /* Ensure white background */
 }
 
-section h1, section h2 {
-  font-family: var(--font-family-heading);
-  color: var(--primary-color);
-  font-size: 2.5rem; /* Larger font size for headings */
-  margin-bottom: 0.5em;
+/* Increase font sizes for headings and paragraphs */
+section h1, 
+section h2, 
+section .experience-item h3 {
+  font-size: 2rem; /* Larger font size for headings */
 }
 
-section p, section li {
+section p, 
+section ul li {
   font-size: 1.25rem; /* Larger font size for text */
 }
 
-/* Footer styling */
+/* Ensure full height for body and html for flex */
+html, body {
+  height: 100%;
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+}
+
+/* Apply flex styling to the body to create a column layout */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make sidebar the same height as the viewport */
+.sidebar {
+  height: 100vh; /* Full height */
+  width: 250px; /* Sidebar width */
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #333; /* Sidebar color */
+  padding-top: 30px; /* Adjust as needed */
+  overflow-y: auto; /* Scrollable when content overflows */
+}
+
+/* Adjust footer to be at the bottom */
 footer {
-  background: var(--footer-bg-color);
-  color: #fff;
+  position: relative; /* Change to relative to flow with content */
+  width: 100%;
+  background: #333; /* Footer color */
+  color: white;
   text-align: center;
   padding: 10px 0;
-  width: 100%;
 }
 
 /* Responsive design adjustments */
 @media (max-width: 768px) {
   .sidebar {
-    position: static; /* Allows the sidebar to flow in the normal document order */
-    width: 100%;
-    height: auto;
-    padding-top: 0;
+    position: static; /* Static so it flows in document order */
+    width: 100%; /* Full width */
+    height: auto; /* Height auto for smaller devices */
   }
 
   section {
-    margin-left: 0; /* Resets any left margin */
-    padding: 20px; /* Smaller padding on smaller screens */
+    margin-left: 0; /* Reset left margin for mobile */
+    padding: 20px; /* Adjust padding for mobile */
+    min-height: auto; /* Height auto for smaller devices */
   }
 
   footer {
-    position: relative; /* Adjust footer position for mobile */
+    position: relative; /* Footer position adjusted for mobile */
   }
 }
