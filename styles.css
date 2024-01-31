@@ -17,13 +17,13 @@ body, h1, h2, h3, p, ul, li, nav, section, footer {
 
 /* Root variable definitions */
 :root {
-  --primary-color: #0056b3;
-  --text-color: #333;
-  --background-color: #f4f4f4;
-  --sidebar-bg-color: #333;
-  --footer-bg-color: #0056b3;
+  --primary-color: #007bff; /* Primary color for links and highlights */
+  --text-color: #333; /* Main text color */
+  --background-color: #f8f9fa; /* Light grey background for a softer look */
+  --sidebar-bg-color: #343a40; /* Darker shade for sidebar */
+  --footer-bg-color: #007bff; /* Keeping primary color for footer for consistency */
   --link-color: #007bff;
-  --hover-bg-color: #0056b3;
+  --hover-bg-color: #0056b3; /* Slightly darker shade for hover state */
   --font-family-sans: 'Open Sans', sans-serif;
   --font-family-heading: 'Raleway', sans-serif;
 }
