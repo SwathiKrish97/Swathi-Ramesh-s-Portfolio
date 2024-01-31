@@ -1,4 +1,9 @@
-
+/* Base reset and element styling */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 body, h1, h2, h3, p, ul, li, nav, section, footer {
   margin: 0;
   padding: 0;
@@ -6,13 +11,28 @@ body, h1, h2, h3, p, ul, li, nav, section, footer {
   text-decoration: none;
 }
 
+/* Google Font inclusion */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;500;600;700&display=swap');
+
+/* Root variable definitions */
+:root {
+  --primary-color: #0056b3;
+  --text-color: #333;
+  --background-color: #f4f4f4;
+  --sidebar-bg-color: #333;
+  --footer-bg-color: #0056b3;
+  --link-color: #007bff;
+  --hover-bg-color: #0056b3;
+  --font-family-sans: 'Open Sans', sans-serif;
+  --font-family-heading: 'Raleway', sans-serif;
+}
+
+/* Base styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-family-sans);
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background: #f4f4f4;
-  color: #333;
+  background: var(--background-color);
+  color: var(--text-color);
 }
 
 /* Sidebar styling */
@@ -22,14 +42,9 @@ body {
   left: 0;
   width: 250px;
   height: 100%;
-  background: #333;
+  background: var(--sidebar-bg-color);
   color: #fff;
-  padding-top: 30px; /* Spacing from the top */
-}
-
-.sidebar ul {
-  padding: 0;
-  list-style: none;
+  padding-top: 30px;
 }
 
 .sidebar ul li a {
@@ -37,85 +52,79 @@ body {
   padding: 15px;
   text-transform: uppercase;
   display: block;
-  transition: background 0.3s, box-shadow 0.3s;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .sidebar ul li a:hover {
-  background: #444;
-  box-shadow: inset 0 0 5px rgba(255,255,255,0.2);
+  background: var(--hover-bg-color);
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
 }
 
-/* Main content styling */
+/* Content styling */
 section {
-  margin-left: 250px; /* same as sidebar width */
+  margin-left: 250px;
   padding: 20px;
   background: #fff;
-  min-height: 100vh; /* full height */
+  min-height: 100vh;
 }
 
 section h1, section h2 {
+  font-family: var(--font-family-heading);
   margin-bottom: 20px;
 }
 
 /* Footer styling */
 footer {
-  background: #333;
+  background: var(--footer-bg-color);
   color: #fff;
   text-align: center;
   padding: 10px 0;
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  width: 100%;
+  width: calc(100% - 250px);
+  left: 250px;
 }
 
-/* Responsive image in the sidebar or header */
-.header-image {
-  display: block;
-  width: 200px;
-  margin: 0 auto 30px;
-  border-radius: 50%;
-}
-
-/* Style adjustments for contact and certifications */
+/* Contact and certifications section styling */
 #contact-section, #certifications-section {
   background: #e2e2e2;
   padding: 20px;
   margin-bottom: 20px;
 }
 
-/* Adjust link colors for better visibility */
+/* Link styling */
 a {
-  color: #00f;
+  color: var(--link-color);
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #009;
+  color: var(--hover-bg-color);
+  text-decoration: none;
 }
 
-
-/* Project list item styles */
+/* Projects section styling */
 #projects-section ul li {
-  background: #f9f9f9;
+  background: #e9ecef;
   margin-bottom: 10px;
   padding: 10px;
-  border-left: 3px solid #0d6efd; /* Bootstrap primary color for a little highlight */
+  border-left: 4px solid var(--primary-color);
+  transition: transform 0.3s ease;
 }
 
-/* Project link styles */
 #projects-section ul li a {
-  color: #333;
+  color: var(--text-color);
   font-weight: bold;
 }
 
-/* Project link hover styles */
 #projects-section ul li a:hover {
-  color: #0d6efd; /* Bootstrap primary color */
   text-decoration: underline;
 }
 
-
+/* Layout and structural styles */
 html, body {
   height: 100%;
+  position: relative;
 }
 
 body {
@@ -123,7 +132,35 @@ body {
   flex-direction: column;
 }
 
-footer {
-  margin-top: auto; /* Push footer to the bottom */
+main {
+  flex: 1;
 }
 
+/* Footer pushed to the bottom */
+footer {
+  margin-top: auto;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .sidebar ul li a {
+    text-align: center;
+    padding: 10px;
+  }
+
+  section {
+    margin-left: 0;
+  }
+
+  footer {
+    position: relative;
+    width: 100%;
+    left: 0;
+  }
+}
