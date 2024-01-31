@@ -97,14 +97,16 @@ section h1, section h2 {
 
 /* About section styling */
 #about-me-section {
-  background: #e2e2e2;
-  padding: 40px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 #about-me-section h2 {
-  margin-bottom: 20px;
+  font-size: 2.5em;
+  margin-bottom: 10px;
 }
 
 #about-me-section p {
@@ -165,14 +167,15 @@ section h1, section h2 {
 
 /* Contact and certifications section styling */
 #contact-section, #certifications-section {
-  background: #e2e2e2;
-  padding: 40px;
-  margin-bottom: 20px;
-  border-radius: 10px;
+ display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 #contact-section h2, #certifications-section h2 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #certifications-section ul {
@@ -180,7 +183,7 @@ section h1, section h2 {
 }
 
 #certifications-section ul li {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 /* Footer styling adjustments */
