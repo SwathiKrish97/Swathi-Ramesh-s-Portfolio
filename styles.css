@@ -124,21 +124,6 @@ section h1, section h2 {
   margin-right: auto; /* Centers the paragraph */
 }
 
-/* Responsive design adjustments for smaller screens */
-@media (max-width: 768px) {
-  #about-me-section {
-    padding: 20px;
-    max-width: 100%; /* Allows the content to fill the container on small screens */
-  }
-
-  #about-me-section h2 {
-    font-size: 1.5em; /* Smaller font size for headings on small screens */
-  }
-
-  #about-me-section p {
-    font-size: 1em; /* Smaller font size for text on small screens */
-  }
-}
 
 /* Projects section styling */
 #projects-section ul {
