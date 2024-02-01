@@ -95,7 +95,6 @@ section h1, section h2 {
   max-width: 600px;
 }
 
-/* About section styling */
 #about-me-section {
   display: flex;
   align-items: center;
@@ -105,17 +104,40 @@ section h1, section h2 {
   padding: 40px;
   border-radius: 10px;
   margin-bottom: 20px;
+  background: #fff; /* Assuming you want a white background */
+  max-width: 800px; /* Maximum width of the content to keep it visually appealing */
+  width: 100%; /* Ensures it takes up the full width up to the max-width */
+  margin-left: auto; /* Centers the block horizontally */
+  margin-right: auto; /* Centers the block horizontally */
 }
 
 #about-me-section h2 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
+  font-size: 2em; /* Slightly reduced from 2.5em for better scaling on large screens */
+  margin-bottom: 0.5em; /* Adjusted to em for consistent scaling */
 }
 
 #about-me-section p {
-  line-height: 1.8;
-  font-size: 1.8em;
+  font-size: 1.25em; /* Adjusted for better readability */
+  line-height: 1.6; /* Standard line-height for paragraphs */
+  max-width: 600px; /* Maximum width for the paragraph to keep the lines at a comfortable reading length */
+  margin-left: auto; /* Centers the paragraph */
+  margin-right: auto; /* Centers the paragraph */
+}
 
+/* Responsive design adjustments for smaller screens */
+@media (max-width: 768px) {
+  #about-me-section {
+    padding: 20px;
+    max-width: 100%; /* Allows the content to fill the container on small screens */
+  }
+
+  #about-me-section h2 {
+    font-size: 1.5em; /* Smaller font size for headings on small screens */
+  }
+
+  #about-me-section p {
+    font-size: 1em; /* Smaller font size for text on small screens */
+  }
 }
 
 /* Projects section styling */
