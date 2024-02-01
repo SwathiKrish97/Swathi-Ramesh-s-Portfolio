@@ -102,6 +102,9 @@ section h1, section h2 {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 #about-me-section h2 {
@@ -110,9 +113,9 @@ section h1, section h2 {
 }
 
 #about-me-section p {
-  line-height: 1;
-  font-size: 1.5em
-  text-align: center;
+  line-height: 1.8;
+  font-size: 1.8em;
+
 }
 
 /* Projects section styling */
