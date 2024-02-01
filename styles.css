@@ -91,7 +91,7 @@ section h1, section h2 {
 }
 
 #home-section p {
-  font-size: 1.2em;
+  font-size: 1.5em;
   max-width: 600px;
 }
 
@@ -110,7 +110,8 @@ section h1, section h2 {
 }
 
 #about-me-section p {
-  line-height: 1.8;
+  line-height: 1;
+  font-size: 1.5em
   text-align: center;
 }
 
